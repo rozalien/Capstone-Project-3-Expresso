@@ -4,10 +4,10 @@ const employeesRouter = require('./employee.js');
 
 const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database(process.env.TEST_DATABASE || './database.sqlite');
-//const timesheetRouter = require('./timesheet.js');
+
 
 apiRouter.use('/employees', employeesRouter);
-//apiRouter.use('/timesheets', seriesRouter);
+
 
 apiRouter.get('/menus', (req, res, next) => {
   db.all('SELECT * FROM Menu',
